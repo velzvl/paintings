@@ -1,0 +1,30 @@
+@mixin element-border {
+  border-radius: 8px;
+  border: 1px var(--color-border) solid;
+}
+
+@mixin element-text($color: var(--color-text)) {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.23px;
+  color: $color;
+}
+
+@mixin media-sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (max-width: 1365px) {
+    @content;
+  }
+}

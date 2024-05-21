@@ -1,0 +1,43 @@
+:root {
+  --color-white: #fff;
+  --color-light: #efefef;
+  --color-white-hover: #ededed;
+  --color-black: #000;
+  --color-dark: #0c0c0c;
+  --color-grey-hover: #464646;
+  --color-grey: #7b7b7b;
+  --color-black-translucent: #0000004d;
+  --color-white-translucent: #ffffff4d;
+
+  --gap-section: 35px;
+  --gap-element: 20px;
+  --padding-element: 15px;
+}
+
+:root #app[data-color-theme='dark'] {
+  --color-background: var(--color-black);
+  --color-element-background: var(--color-dark);
+  --color-element-background-secondary: var(--color-white);
+  --color-border: var(--color-white);
+  --color-border-translucent: var(--color-white-translucent);
+  --color-pagination-button-background: var(--color-grey-hover);
+
+  --color-text: var(--color-white);
+  --color-placeholder: var(--color-white-translucent);
+
+  --color-scrollbar-track: #0000001a;
+}
+
+:root #app[data-color-theme='light'] {
+  --color-background: var(--color-white);
+  --color-element-background: var(--color-white);
+  --color-element-background-secondary: var(--color-light);
+  --color-border: var(--color-black);
+  --color-border-translucent: var(--color-black-translucent);
+  --color-pagination-button-background: var(--color-white-hover);
+
+  --color-text: var(--color-black);
+  --color-placeholder: var(--color-black-translucent);
+
+  --color-scrollbar-track: var(--color-white);
+}
