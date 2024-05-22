@@ -6,6 +6,11 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    headers: {
+      'Content-Type': 'text/javascript',
+    },
+  },
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {

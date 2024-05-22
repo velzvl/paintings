@@ -1,5 +1,4 @@
 module.exports = {
-  publicPath: '/paintings/',
   css: {
     extract: false,
     requireModuleExtension: false,
