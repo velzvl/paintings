@@ -12,9 +12,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@vue/eslint-config-airbnb": "^8.0.0",
@@ -43,7 +41,6 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-playwright": "^1.5.4",
     "eslint-plugin-vue": "^9.23.0",
-    "gh-pages": "^6.1.1",
     "jsdom": "^24.0.0",
     "node-sass": "^9.0.0",
     "npm-run-all2": "^6.1.2",
