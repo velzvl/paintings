@@ -15,10 +15,10 @@ const props = withDefaults(defineProps<IInputProps>(), {
 const emit = defineEmits(['update:value']);
 
 const inputRef = ref<HTMLInputElement>();
-const timer = ref<number | null>();
+const timer = ref<any>();
 
 const handleInputChange = (event: Event): void => {
-  clearTimeout(timer.value || 0);
+  clearTimeout(timer.value);
   const input = {
     value: (event.target as HTMLInputElement).value || '',
   };
