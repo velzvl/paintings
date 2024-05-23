@@ -26,7 +26,7 @@ watch(paintingStore.filters, () => {
             placeholder="Name"
           />
         </li>
-        <li class="filters__item">
+        <li class="filters__item" style="z-index: 12;">
           <SelectList
             v-model:value="paintingStore.filters.author"
             select-placeholder="Author"
@@ -34,7 +34,7 @@ watch(paintingStore.filters, () => {
             :get-item-placeholder="getAuthorItemPlaceholder"
           />
         </li>
-        <li class="filters__item">
+        <li class="filters__item" style="z-index: 11;">
           <SelectList
             v-model:value="paintingStore.filters.location"
             select-placeholder="Location"
