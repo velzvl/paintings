@@ -1,4 +1,5 @@
 import type { IFilters } from '@/types';
+import formatCreated from './formatCreated';
 
 interface IGetFetchPaintingsParametrsArgs {
   filters: IFilters;
@@ -31,12 +32,12 @@ export default (parametrs: IGetFetchPaintingsParametrsArgs): string => {
   }
   if (parametrs.filters.created.from.length > 0) {
     parametrsString.value = parametrsString.value.concat(
-      `&created_gte=${parametrs.filters.created.from}`,
+      `&created_gte=${formatCreated(parametrs.filters.created.from)}`,
     );
   }
   if (parametrs.filters.created.before.length > 0) {
     parametrsString.value = parametrsString.value.concat(
-      `&created_lte=${parametrs.filters.created.before}`,
+      `&created_lte=${formatCreated(parametrs.filters.created.before)}`,
     );
   }
   return parametrsString.value;

@@ -21,12 +21,12 @@ export const usePaintingStore = defineStore('painting', () => {
 
   const fetchPaintings = async (page: number = 1, limit: number = PAINTINGS_PAGE_LIMIT) => {
     paintings.value = [];
-    const dataTotalPaintings = await paintingsApi.countTotalPaintings(filters);
-    totalPages.value = Math.ceil(dataTotalPaintings / PAINTINGS_PAGE_LIMIT);
-    const dataPaintings = await paintingsApi
+    const dataTotalPaintings = await paintingsApi.fetchPaintings(filters);
+    totalPages.value = Math.ceil(dataTotalPaintings.length / PAINTINGS_PAGE_LIMIT) || 1;
+    const clientPaintings = await paintingsApi
       .fetchPaintings(filters, page, limit)
       .then((paintings) => getClientPaintings(paintings, authors.value, locations.value));
-    paintings.value = dataPaintings;
+    paintings.value = clientPaintings;
   };
 
   const fetchAuthors = async () => {
