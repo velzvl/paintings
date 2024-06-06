@@ -3,7 +3,6 @@ import { defineStore } from 'pinia';
 import type { IAuthor, IFilters, ILocation, IPaintingClient } from '@/types';
 import { store } from '@/stores/idnex';
 import paintingsApi from '@/http/paintingsApi';
-import { PAINTINGS_PAGE_LIMIT } from '@/consts';
 import getClientPaintings from '@/helpers/getClientPaintings';
 
 export const usePaintingStore = defineStore('painting', () => {
@@ -19,10 +18,14 @@ export const usePaintingStore = defineStore('painting', () => {
   const totalPages = ref<number | null>(null);
   const currentPage = ref<number | null>(null);
 
-  const fetchPaintings = async (page: number = 1, limit: number = PAINTINGS_PAGE_LIMIT) => {
+  const fetchPaintings = async (
+    page: number = 1,
+    limit: number = import.meta.env.VITE_PAINTINGS_PAGE_LIMIT,
+  ) => {
     paintings.value = [];
     const dataTotalPaintings = await paintingsApi.fetchPaintings(filters);
-    totalPages.value = Math.ceil(dataTotalPaintings.length / PAINTINGS_PAGE_LIMIT) || 1;
+    const paintingsLength = dataTotalPaintings.length;
+    totalPages.value = Math.ceil(paintingsLength / import.meta.env.VITE_PAINTINGS_PAGE_LIMIT) || 1;
     const clientPaintings = await paintingsApi
       .fetchPaintings(filters, page, limit)
       .then((paintings) => getClientPaintings(paintings, authors.value, locations.value));

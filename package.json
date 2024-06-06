@@ -19,6 +19,7 @@
   "dependencies": {
     "@vue/eslint-config-airbnb": "^8.0.0",
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "pinia": "^2.1.7",
     "simplebar": "^6.2.6",
     "simplebar-vue": "^2.3.3",
