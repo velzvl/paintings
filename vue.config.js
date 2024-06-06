@@ -5,6 +5,7 @@ module.exports = {
     requireModuleExtension: false,
     loaderOptions: {
       sass: {
+        data: '@import "@/assets/scss/mixins.scss"',
         prependData: `
         @import "@/assets/scss/main.scss";
         `,

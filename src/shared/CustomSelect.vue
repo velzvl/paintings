@@ -93,7 +93,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/mixins.scss';
 
 .select {
   position: relative;

@@ -68,7 +68,6 @@ const handleSelectCancel = () => {
 </template>
 
 <style lang="scss">
-@import '@/assets/scss/mixins.scss';
 
 .select-values__inputs {
   display: flex;

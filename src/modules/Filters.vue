@@ -54,7 +54,6 @@ watch(paintingStore.filters, () => {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/mixins.scss';
 
 .filters {
   display: flex;

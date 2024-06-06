@@ -7,6 +7,16 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), vueJsx()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/assets/scss/variables.scss";
+          @import "@/assets/scss/mixins.scss";
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

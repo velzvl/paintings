@@ -26,7 +26,6 @@ const handleChangeThemeClick = () => {
 </template>
 
 <style lang="scss">
-@import '@/assets/scss/mixins.scss';
 
 .header {
 

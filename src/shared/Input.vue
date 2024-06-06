@@ -49,7 +49,6 @@ watch(() => props.value, () => {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/scss/mixins.scss';
 
 .label {
   display: none;

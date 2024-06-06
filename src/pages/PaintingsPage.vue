@@ -25,7 +25,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/mixins.scss';
 
 .main {
   display: flex;

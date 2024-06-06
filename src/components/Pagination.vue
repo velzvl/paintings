@@ -67,7 +67,6 @@ const handlePageChange = (newPage: number) => {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/scss/mixins.scss';
 
 section {
   margin-top: 40px;

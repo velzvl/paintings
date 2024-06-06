@@ -22,7 +22,6 @@ const paintingStore = usePaintingStore();
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/mixins.scss';
 
 section {
   flex: 1 1 auto;
