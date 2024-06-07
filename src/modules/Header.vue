@@ -8,7 +8,11 @@ import { THEME_COLORS } from '@/types';
 const themeRef = inject<{ value: THEME_COLORS }>('themeRef');
 
 const handleChangeThemeClick = () => {
-  themeRef.value = themeRef?.value === THEME_COLORS.LIGHT ? THEME_COLORS.DARK : THEME_COLORS.LIGHT;
+  if (themeRef) {
+    themeRef.value = themeRef?.value === THEME_COLORS.LIGHT
+      ? THEME_COLORS.DARK
+      : THEME_COLORS.LIGHT;
+  }
 };
 </script>
 

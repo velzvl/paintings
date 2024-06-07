@@ -26,6 +26,10 @@ const handleOptionCancel = (): void => {
 };
 
 const checkPlaceholderLength = () => {
+  if (!selectPlaceholderRef.value || !selectIconsRef.value
+  || !selectPlaceholderTextRef.value || !selectPlaceholderTextRef.value.textContent) {
+    return;
+  }
   if (selectPlaceholderRef.value.offsetWidth - (selectIconsRef.value.offsetWidth + 40)
   <= selectPlaceholderTextRef.value.offsetWidth) {
     while (selectPlaceholderRef.value.offsetWidth - (selectIconsRef.value.offsetWidth + 40)
@@ -36,14 +40,16 @@ const checkPlaceholderLength = () => {
 };
 
 const handleResizeWindow = () => {
-  selectPlaceholderTextRef.value.textContent = props.state.placeholder;
+  if (selectPlaceholderTextRef.value) {
+    selectPlaceholderTextRef.value.textContent = props.state.placeholder;
+  }
   checkPlaceholderLength();
 };
 
 watch(() => props.state.placeholder, () => {
   nextTick(() => {
     checkPlaceholderLength();
-  }, 0);
+  });
 });
 
 onMounted(() => {
