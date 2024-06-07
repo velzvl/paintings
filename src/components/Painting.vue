@@ -33,6 +33,9 @@ defineProps<IPaintingProps>();
 <style lang="scss" scoped>
 
 .painting {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
@@ -40,8 +43,9 @@ defineProps<IPaintingProps>();
   &__img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    background-color: white;
+    object-fit: contain;
+    object-position: top;
+    background-color: var(--color-element-background);
   }
 
   &__info {

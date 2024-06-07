@@ -36,7 +36,7 @@ const handlePageChange = (newPage: number) => {
           <DoubleArrowIcon style="transform: rotate(180deg); " />
         </PaginationButton>
         <PaginationButton
-          @click="handlePageChange(current! - 1)"
+          @click="handlePageChange(current - 1)"
           :disabled="current === 1"
         >
           <ArrowIcon style="transform: rotate(180deg);" />
@@ -50,13 +50,13 @@ const handlePageChange = (newPage: number) => {
           {{ page }}
         </PaginationButton>
         <PaginationButton
-          @click="() => handlePageChange(current! + 1)"
+          @click="() => handlePageChange(current + 1)"
           :disabled="current === pages"
         >
           <ArrowIcon />
         </PaginationButton>
         <PaginationButton
-          @click="() => handlePageChange(pages!)"
+          @click="() => handlePageChange(pages)"
           :disabled="current === pages"
         >
           <DoubleArrowIcon />

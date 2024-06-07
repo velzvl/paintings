@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue';
+import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue';
 import type { ICustomSelectStateRef } from '@/types';
 import DropdownIcon from './icons/DropdownIcon.vue';
 import CrossIcon from './icons/CrossIcon.vue';
@@ -26,22 +26,22 @@ const handleOptionCancel = (): void => {
 };
 
 const checkPlaceholderLength = () => {
-  if (selectPlaceholderRef.value!.offsetWidth - (selectIconsRef.value!.offsetWidth + 40)
-  <= selectPlaceholderTextRef.value!.offsetWidth) {
-    while (selectPlaceholderRef.value!.offsetWidth - (selectIconsRef.value!.offsetWidth + 40)
-  <= selectPlaceholderTextRef.value!.offsetWidth) {
-    selectPlaceholderTextRef.value!.textContent = selectPlaceholderTextRef.value!.textContent!.slice(0, -4).concat('...');
+  if (selectPlaceholderRef.value.offsetWidth - (selectIconsRef.value.offsetWidth + 40)
+  <= selectPlaceholderTextRef.value.offsetWidth) {
+    while (selectPlaceholderRef.value.offsetWidth - (selectIconsRef.value.offsetWidth + 40)
+  <= selectPlaceholderTextRef.value.offsetWidth) {
+      selectPlaceholderTextRef.value.textContent = selectPlaceholderTextRef.value.textContent.slice(0, -4).concat('...');
     }
   }
 };
 
 const handleResizeWindow = () => {
-  selectPlaceholderTextRef.value!.textContent = props.state.placeholder;
+  selectPlaceholderTextRef.value.textContent = props.state.placeholder;
   checkPlaceholderLength();
 };
 
 watch(() => props.state.placeholder, () => {
-  setTimeout(() => {
+  nextTick(() => {
     checkPlaceholderLength();
   }, 0);
 });

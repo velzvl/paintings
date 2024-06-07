@@ -26,14 +26,14 @@ const handleInputChange = (event: Event): void => {
   if (isNumInput) {
     input.value = input.value.replace(/[^0-9]/g, '');
   }
-  inputRef.value!.value = input.value;
+  inputRef.value.value = input.value;
   timer.value = setTimeout(() => {
     emit('update:value', input.value);
   }, 1000);
 };
 
 watch(() => props.value, () => {
-  inputRef.value!.value = props.value;
+  inputRef.value.value = props.value;
 });
 </script>
 
